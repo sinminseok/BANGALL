@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:two_week/Utils/constants.dart';
-import 'package:two_week/View/Lobby/Lobby_View_Widget/value_detail_widget.dart';
+
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+import 'package:two_week/View/MainViews/Lobby/Lobby_View_Widget/value_detail_widget.dart';
 
 class Value_Container extends StatefulWidget {
   String XPER_Value;

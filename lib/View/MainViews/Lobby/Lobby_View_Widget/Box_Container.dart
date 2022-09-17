@@ -2,7 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:rflutter_alert/rflutter_alert.dart';
+import '../../../../Popups/lobby_popup/selected_box.dart';
 import 'box_container_detail_widget.dart';
 
 class BoxContainer_Widget extends StatefulWidget {
@@ -15,6 +16,8 @@ class BoxContainer_Widget extends StatefulWidget {
 class _BoxContainer_WidgetState extends State<BoxContainer_Widget> {
   @override
   Widget build(BuildContext context) {
+
+
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.87,
@@ -32,7 +35,11 @@ class _BoxContainer_WidgetState extends State<BoxContainer_Widget> {
           color: Colors.white),
       child: Row(
         children: [
-          BoxContainer_Detail_Widget(size,true,false,false,""),
+          InkWell(
+              onTap: (){
+                Selected_box_popup().showDialog(size,context);
+              },
+              child: BoxContainer_Detail_Widget(size,true,false,false,"")),
           BoxContainer_Detail_Widget(size,false,true,false,""),
           BoxContainer_Detail_Widget(size,false,false,true,""),
           BoxContainer_Detail_Widget(size,true,false,false,"2h55m")

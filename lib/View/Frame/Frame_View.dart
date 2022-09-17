@@ -6,13 +6,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:two_week/Utils/constants.dart';
 import 'package:two_week/View/Frame/Frame_Widgets/Coin_Widget.dart';
-import 'package:two_week/View/Game/Game_View.dart';
-import 'package:two_week/View/Inventory/Inventory_View.dart';
-import 'package:two_week/View/Lobby/Lobby_View.dart';
-import 'package:two_week/View/Market/Market_View.dart';
-import 'package:two_week/View/Workshop/Workshop_View.dart';
-
+import 'package:page_transition/page_transition.dart';
+import 'package:two_week/View/Wallet/Wallet_View.dart';
 import '../../Widget/bottom_nav_widget.dart';
+import '../MainViews/Game/Game_View.dart';
+import '../MainViews/Inventory/Inventory_View.dart';
+import '../MainViews/Lobby/Lobby_View.dart';
+import '../MainViews/Market/Market_View.dart';
+import '../MainViews/Workshop/Workshop_View.dart';
 
 class Frame_View extends StatefulWidget {
   const Frame_View({Key? key}) : super(key: key);
@@ -66,7 +67,17 @@ class _Frame_View extends State<Frame_View> {
                 Coin_Widget("per_icon", "0.00", size),
                 Coin_Widget("havah_icon", "0.00", size),
 
-                Image.asset("assets/icons/appbar_icons/btn_wallet.png",width: size.width*0.083,)
+                InkWell(
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              type: PageTransitionType.rightToLeft,
+                              child: Wallet_View(
+
+                              )));
+                    },
+                    child: Image.asset("assets/icons/appbar_icons/btn_wallet.png",width: size.width*0.083,))
               ],
             ),
           ),
