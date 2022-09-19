@@ -132,6 +132,7 @@ flutter:
     - assets/Wallet/ToSpending_button.png
     - assets/Wallet/Trade_button.png
     - assets/Wallet/png.png
+    - assets/Wallet/title_logo.png
     - assets/Game/icons/car1.png
     - assets/Game/icons/car2.png
     - assets/Game/icons/car3.png

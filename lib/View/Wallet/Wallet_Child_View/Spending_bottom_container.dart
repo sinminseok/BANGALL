@@ -82,7 +82,7 @@ class _Spending_bottom_containerState extends State<Spending_bottom_container> {
               ],
             ),
           ),
-          pending_selected == true ? Pending_listview(size) :Container(),
+          pending_selected == true ? SPending_listview(size) :Container(),
           history_selected == true? History_listview(size) : Container()
         ],
       ),

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../Utils/constants.dart';
 import 'Sent_and_Receive_Widget.dart';
 
-Widget Pending_listview(Size size){
+Widget SPending_listview(Size size){
   return Container(
 
     width: size.width*0.9,

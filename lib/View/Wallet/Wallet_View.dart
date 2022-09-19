@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../Popups/Wallet_popup/address_popup.dart';
 import '../../Utils/constants.dart';
 import 'Wallet_Child_View/Spending_View.dart';
 import 'Wallet_Child_View/Spending_bottom_container.dart';
@@ -145,9 +146,14 @@ class _Wallet_ViewState extends State<Wallet_View> {
                   child: Text("Spending Account",style: TextStyle(fontWeight: FontWeight.bold,color: kPrimaryColor,fontSize: 18),),
                 ),
                 SizedBox(width: size.width*0.19,),
-                Image.asset(
-                  "assets/Wallet/icons/question_icon.png",
-                  width: size.width * 0.06,
+                InkWell(
+                  onTap: (){
+                    Address_popup().showDialog_question(size, context);
+                  },
+                  child: Image.asset(
+                    "assets/Wallet/icons/question_icon.png",
+                    width: size.width * 0.06,
+                  ),
                 )
               ],
             ),
@@ -166,7 +172,7 @@ class _Wallet_ViewState extends State<Wallet_View> {
               ],
             ),
             //Coin_Container_Widget(size,xper_value,per_value,HVH_value)
-            spending_selected !=true?Container():Spending_View(size,20.32,20.0,2.32),
+            spending_selected !=true?Container():Spending_View(size,context,20.32,20.0,2.32),
             wallet_selected !=true?Container():Wallet_Account_View(context,size,"GASDASDASD",20.0,20.0,20.0,20.0,10,10)
 
           ],

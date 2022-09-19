@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../Utils/constants.dart';
+import '../Wallet_Transfer/Transfer_password_View.dart';
 import 'Spending_bottom_container.dart';
-
+import 'package:page_transition/page_transition.dart';
 Widget Spending_View(
-    Size size, double xper_value, double per_value, double hvh_value) {
+    Size size,BuildContext context, double xper_value, double per_value, double hvh_value) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.end,
     children: [
@@ -134,9 +135,20 @@ Widget Spending_View(
       SizedBox(
         height: size.height * 0.03,
       ),
-      Image.asset(
-        "assets/Wallet/icons/transfer_button.png",
-        width: size.width * 0.4,
+      InkWell(
+        onTap: (){
+          Navigator.push(
+              context,
+              PageTransition(
+                  type: PageTransitionType.fade,
+                  child: Transfer_Password_View(
+
+                  )));
+        },
+        child: Image.asset(
+          "assets/Wallet/icons/transfer_button.png",
+          width: size.width * 0.4,
+        ),
       ),
       SizedBox(
         height: size.height * 0.03,
