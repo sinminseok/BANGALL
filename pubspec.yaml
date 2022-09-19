@@ -46,6 +46,8 @@ dev_dependencies:
   dropdown_button2: ^1.8.1
   rflutter_alert: ^2.0.4
 
+  bottom_drawer: ^0.0.5
+
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -129,6 +131,15 @@ flutter:
     - assets/Wallet/ToExternal_button.png
     - assets/Wallet/ToSpending_button.png
     - assets/Wallet/Trade_button.png
+    - assets/Wallet/png.png
+    - assets/Game/icons/car1.png
+    - assets/Game/icons/car2.png
+    - assets/Game/icons/car3.png
+    - assets/Game/icons/car4.png
+    - assets/Game/Add_game_img.png
+    - assets/Game/game_img.png
+    - assets/Game/icons/search_icon.png
+    - assets/Mypage/edit_icon.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

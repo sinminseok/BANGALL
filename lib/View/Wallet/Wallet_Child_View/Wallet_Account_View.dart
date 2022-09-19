@@ -1,58 +1,64 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Popups/Wallet_popup/address_popup.dart';
 import '../../../Utils/constants.dart';
 import 'Spending_bottom_container.dart';
 
-Widget Wallet_Account_View(Size size, String address, double xper_value,double per_value,double hvh_value,double usdc_value,int car_count,int car_boxes_count) {
+Widget Wallet_Account_View(BuildContext context,Size size, String address, double xper_value,double per_value,double hvh_value,double usdc_value,int car_count,int car_boxes_count) {
   return SingleChildScrollView(
     child: Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0, bottom: 1.3),
-          child: Container(
-            height: size.height * 0.084,
-            width: size.width * 0.9,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey.shade200),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(width: size.width*0.01,),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: size.height * 0.013,
-                    ),
-                    Text(
-                      "Address",
-                      style: TextStyle(fontSize: 13, color: Colors.grey),
-                    ),
-                    Text(
-                      "$address",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  width: size.width * 0.4,
-                ),
-                Text(
-                  "Detailed",
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: kPrimaryColor,
-                    decoration: TextDecoration.underline,
+        InkWell(
+          onTap: (){
+            Address_popup().showDialog(size, context);
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(top: 8.0, bottom: 1.3),
+            child: Container(
+              height: size.height * 0.084,
+              width: size.width * 0.9,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.grey.shade200),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(width: size.width*0.01,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: size.height * 0.013,
+                      ),
+                      Text(
+                        "Address",
+                        style: TextStyle(fontSize: 13, color: Colors.grey),
+                      ),
+                      Text(
+                        "$address",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.grey),
+                      ),
+                    ],
                   ),
-                )
-              ],
+                  SizedBox(
+                    width: size.width * 0.4,
+                  ),
+                  Text(
+                    "Detailed",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: kPrimaryColor,
+                      decoration: TextDecoration.underline,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
